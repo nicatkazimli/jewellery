@@ -13,6 +13,7 @@ const Footer = () => {
           <div className="footer-location">
             <FaMapMarkerAlt className="location-icon"/>
             <span>123 Diamond Street, London, UK</span>
+            <a href="tel:+994513562838">📞 0513562838</a>
           </div>
         </div>
 

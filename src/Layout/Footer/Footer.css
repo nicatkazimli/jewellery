@@ -28,10 +28,17 @@
 }
 
 .footer-location {
-  display: flex;
+  justify-content: column;
   align-items: center;
   margin-top: 15px;
   color: #ccc;
+}
+.footer-location a{
+    display: flex;
+  align-items: center;
+  margin-top: 15px;
+  color: #ccc;
+  text-decoration: none;
 }
 
 .footer-location .location-icon {
@@ -108,11 +115,14 @@
     justify-content: center;
     margin-left: 19px;
   }
-  .location-icon{
-    padding-bottom: 17px;
-  }
+ 
 
   .footer-location {
-    justify-content: center;
+    justify-content: column;
+    padding: auto;
+    font-size: 14px;
+  }
+  .footer-container a {
+    margin-left: 3.5px;
   }
 }
