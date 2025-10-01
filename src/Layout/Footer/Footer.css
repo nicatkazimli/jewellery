@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Montserrat:wght@400;500&display=swap');
+
+.footer {
+  background: linear-gradient(135deg, #111, #222);
+  color: #fff;
+  padding: 50px 100px 20px 100px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+/* Left Section */
+.footer-left .footer-logo {
+  font-family: 'Cinzel', serif;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.footer-slogan {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #f0c27b;
+}
+
+.footer-location {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  color: #ccc;
+}
+
+.footer-location .location-icon {
+  margin-right: 8px;
+  color: #f0c27b;
+}
+
+/* Center Section */
+.footer-center h4 {
+  margin-bottom: 15px;
+}
+
+.footer-center ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-center ul li {
+  margin: 8px 0;
+}
+
+.footer-center ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.footer-center ul li a:hover {
+  color: #f0c27b;
+  text-decoration: underline;
+}
+
+/* Right Section */
+.footer-right h4 {
+  margin-bottom: 15px;
+}
+
+.social-icons a {
+  margin-right: 15px;
+  font-size: 20px;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.social-icons a:hover {
+  color: #f0c27b;
+  transform: scale(1.1);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #aaa;
+  
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-left, .footer-center, .footer-right {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+
+  .social-icons {
+    justify-content: center;
+    margin-left: 19px;
+  }
+  .location-icon{
+    padding-bottom: 17px;
+  }
+
+  .footer-location {
+    justify-content: center;
+  }
+}

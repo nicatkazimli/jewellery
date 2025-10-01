@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@400;600&display=swap');
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: linear-gradient(135deg, rgba(0,0,0,0.9), rgba(212,175,55,0.85)),
+              url("https://img.freepik.com/free-photo/luxury-golden-bracelet-black-background_1232-4327.jpg?w=1060&t=st=1727784941~exp=1727788541~hmac=90917f0e7b6bfb25b18f9dd58ef8390e3b5f702277f5853d5f0c70bff4456d3c");
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.6);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  flex-direction: flex; 
+  align-items: center;
+  gap: 8px;
+}
+
+.logo img {
+  width: 110px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(212,175,55,0.8);
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+  opacity: 0.95;
+}
+
+.logo h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 28px; 
+  font-weight: 700;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.logo h1:hover {
+  color: #d4af37;
+}
+
+/* Desktop Nav */
+.nav {
+  display: flex;
+  gap: 35px;
+}
+
+.nav a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background: #d4af37;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav a:hover {
+  color: #d7ff5f;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* Mobile Styles */
+.menu-icon {
+  display: none;
+  font-size: 26px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 70%;
+  height: 100%;
+  background: rgba(0,0,0,0.95);
+  padding: 100px 30px;
+  flex-direction: column;
+  gap: 30px;
+  transition: left 0.4s ease;
+  box-shadow: 5px 0 15px rgba(0,0,0,0.5);
+}
+
+.mobile-menu.open {
+  left: 0;
+  display: flex;
+}
+
+.mobile-menu a {
+  font-family: 'Cinzel', serif;
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.mobile-menu a:hover {
+  color: #d4af37;
+}
+
+/* Responsive Breakpoint */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .logo h1 {
+    font-size: 18px;
+    text-align: center;
+  }
+}
