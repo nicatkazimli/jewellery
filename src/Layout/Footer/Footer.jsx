@@ -32,7 +32,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-
       <div className="footer-bottom">
         © 2025 Jewellery. All rights reserved.
       </div>
