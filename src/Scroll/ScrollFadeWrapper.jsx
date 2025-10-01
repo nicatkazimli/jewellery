@@ -1,9 +1,10 @@
-// ScrollFadeWrapper.jsx
 import React, { useEffect, useRef, useState } from 'react';
 import './ScrollFadeWrapper.css';
 
 const ScrollFadeWrapper = ({ children, className }) => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(
+    window.innerWidth < 992 ? true : false
+  );
   const domRef = useRef();
 
   useEffect(() => {
@@ -11,14 +12,16 @@ const ScrollFadeWrapper = ({ children, className }) => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.unobserve(domRef.current); // bir dəfə animasiya üçün
+          observer.unobserve(domRef.current);
         }
       },
-      { threshold: 0.1 } // 10% göründükdə trigger
+      {
+        threshold: 0,
+        rootMargin: '0px 0px -200px 0px',
+      }
     );
 
     if (domRef.current) observer.observe(domRef.current);
-
     return () => observer.disconnect();
   }, []);
 
@@ -26,6 +29,7 @@ const ScrollFadeWrapper = ({ children, className }) => {
     <div
       ref={domRef}
       className={`scroll-fade-wrapper ${isVisible ? 'is-visible' : ''} ${className || ''}`}
+      style={{ willChange: 'opacity, transform' }}
     >
       {children}
     </div>
