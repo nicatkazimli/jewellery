@@ -1,12 +1,76 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Montserrat:wght@400;500&display=swap');
 
 .footer {
-  background: linear-gradient(135deg, #111, #222);
+  position: relative;
+  background: linear-gradient(135deg, #0b0b0b, #1b1b1b);
   color: #fff;
-  padding: 50px 100px 20px 100px;
+  padding: 60px 100px 120px 100px;
   font-family: 'Montserrat', sans-serif;
+  overflow: hidden;
+  z-index: 0;
 }
 
+/* 🔵 Dalğa arxa fonu tam örtür */
+/* 🌊 Yeni Dalğa Effekti */
+.wave-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 1;
+}
+
+.wave {
+  position: relative;
+  display: block;
+  width: 200%;
+  height: 400px;
+  background: linear-gradient(180deg, #005eff 0%, #0033aa 100%);
+  border-radius: 1000% 1000% 0 0;
+  opacity: 0.9;
+  filter: blur(10px);
+  animation: moveWave 8s ease-in-out infinite;
+}
+
+.wave2 {
+  position: absolute;
+  top: 0;
+  left: -50%;
+  background: linear-gradient(180deg, #007bff 0%, #0050cc 100%);
+  opacity: 0.6;
+  animation: moveWave2 10s ease-in-out infinite;
+}
+
+/* 🔁 Dalğa hərəkəti */
+@keyframes moveWave {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-25%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes moveWave2 {
+  0% { transform: translateX(-25%); }
+  50% { transform: translateX(0); }
+  100% { transform: translateX(-25%); }
+}
+
+/* Footer tərkibi dalğanın üzərində qalsın */
+.footer-container, .footer-bottom {
+  position: relative;
+  z-index: 5;
+}
+
+
+/* Footer kontenti dalğanın üzərində */
+.footer-container, .footer-bottom {
+  position: relative;
+  z-index: 5;
+}
+
+/* Container dizaynı */
 .footer-container {
   display: flex;
   justify-content: space-between;
@@ -28,15 +92,14 @@
 }
 
 .footer-location {
-  justify-content: column;
-  align-items: center;
   margin-top: 15px;
   color: #ccc;
 }
-.footer-location a{
-    display: flex;
+
+.footer-location a {
+  display: flex;
   align-items: center;
-  margin-top: 15px;
+  margin-top: 10px;
   color: #ccc;
   text-decoration: none;
 }
@@ -88,13 +151,12 @@
   transform: scale(1.1);
 }
 
-/* Footer Bottom */
+/* Bottom Text */
 .footer-bottom {
   text-align: center;
   margin-top: 30px;
   font-size: 14px;
   color: #aaa;
-  
 }
 
 /* Responsive */
@@ -110,19 +172,7 @@
     margin-bottom: 20px;
   }
 
-
   .social-icons {
     justify-content: center;
-    margin-left: 19px;
-  }
- 
-
-  .footer-location {
-    justify-content: column;
-    padding: auto;
-    font-size: 14px;
-  }
-  .footer-container a {
-    margin-left: 5.5px;
   }
 }
